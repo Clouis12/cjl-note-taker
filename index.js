@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static("./public"));
 app.use(bodyParser.json());
 // i am creating a variable that is equal to port "8080"
-const port = 8080;
+const port = process.env.PORT || 8080;
 // confinguring a a get request for notes.html
 app.get("/notes", (req, res) => {
   res.sendFile("public/notes.html", { root: __dirname });
